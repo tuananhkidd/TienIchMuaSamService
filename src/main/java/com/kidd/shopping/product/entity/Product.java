@@ -25,8 +25,11 @@ public class Product {
     private Date updatedDate;
     private int rating;
     @Convert(converter = ListConverter.class)
-    private String imageUrls;
+    private List<String> imageUrls;
     private String avatarUrl;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id")
+    private ProductCategory productCategory;
 
     @PrePersist
     public void onSaveDate() {
@@ -118,11 +121,11 @@ public class Product {
         this.rating = rating;
     }
 
-    public String getImageUrls() {
+    public List<String> getImageUrls() {
         return imageUrls;
     }
 
-    public void setImageUrls(String imageUrls) {
+    public void setImageUrls(List<String> imageUrls) {
         this.imageUrls = imageUrls;
     }
 
@@ -132,5 +135,13 @@ public class Product {
 
     public void setAvatarUrl(String avatarUrl) {
         this.avatarUrl = avatarUrl;
+    }
+
+    public ProductCategory getProductCategory() {
+        return productCategory;
+    }
+
+    public void setProductCategory(ProductCategory productCategory) {
+        this.productCategory = productCategory;
     }
 }

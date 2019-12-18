@@ -1,11 +1,15 @@
 package com.kidd.shopping;
 
 import java.math.BigDecimal;
+import java.util.Random;
 
 public class test {
-    public static void main(String[] args) {
-        String s = "350.000 đ";
-        s = s.replaceAll("[.]", "").replaceAll("đ","").trim();
-        System.out.println(new BigDecimal(s));
+    public static void main(String[] args) throws InterruptedException {
+        int i = 5;
+        Random random = new Random();
+        while (true){
+            System.out.println(random.nextInt(i));
+            Thread.sleep(1000);
+        }
     }
 }
