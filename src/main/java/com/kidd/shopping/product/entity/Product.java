@@ -10,6 +10,8 @@ import java.util.List;
 @Entity
 @Table(name = "product")
 public class Product {
+    public static final String CREATE_DATE = "createdDate";
+
     @Id
     private String id;
     private String name;
@@ -27,7 +29,7 @@ public class Product {
     @Convert(converter = ListConverter.class)
     private List<String> imageUrls;
     private String avatarUrl;
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "category_id")
     private ProductCategory productCategory;
 

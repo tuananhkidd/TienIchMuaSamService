@@ -8,4 +8,7 @@ public interface SizeRepository extends JpaRepository<Size,Integer> {
     @Query("select s.id from Size s where s.name = ?1 and s.productCategory.id =?2")
     int getSizeIDByName(String name,long categoryID);
 
+    @Query("select s from Size s where s.name = ?1 and s.productCategory.id =?2")
+    Size getSizeByName(String name,long categoryID);
+
 }

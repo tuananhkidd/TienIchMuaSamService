@@ -14,9 +14,6 @@ public class ProductProperty {
     @Column(name = "id")
     private int id;
 
-    @Convert(converter = SizeConverter.class)
-    private List<ColorSize> colorSize;
-
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "material_id")
     private Material material;
@@ -43,14 +40,6 @@ public class ProductProperty {
 
     public void setMaterial(Material material) {
         this.material = material;
-    }
-
-    public List<ColorSize> getColorSize() {
-        return colorSize;
-    }
-
-    public void setColorSize(List<ColorSize> colorSize) {
-        this.colorSize = colorSize;
     }
 
     public Style getStyle() {
