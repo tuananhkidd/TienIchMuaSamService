@@ -55,12 +55,12 @@ public class ProductController extends BaseController {
         return baseResponse;
     }
 
-    @ApiOperation(value = "", response = Iterable.class)
+    @ApiOperation(value = "Lấy danh sách sản phẩm", response = Iterable.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Tạo thành công", response = OkResponse.class)
     })
     @GetMapping
-    public Response getListProduct(@RequestParam("category_id") Long categoryId,
+    public Response getListProduct(@RequestParam(value = "category_id",required = false) Long categoryId,
                                    @ApiParam(name = "sortBy", value = "Trường cần sort, mặc định là " + Product.CREATE_DATE)
                                    @RequestParam(value = "sortBy", defaultValue = Product.CREATE_DATE) String sortBy,
                                    @ApiParam(name = "sortType", value = "Nhận (asc | desc), mặc định là asc")

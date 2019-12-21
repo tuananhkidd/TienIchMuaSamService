@@ -4,6 +4,7 @@ public class Constant {
     //Kích thước số phần tử trả về tối đa trên 1 trang
     public static final int MAX_PAGE_SIZE = 10;
     public static final String CUSTOMER = "CUSTOMER";
+    public static final String ADMIN = "ADMIN";
     public static final String FEMALE = "FEMALE";
     public static final String MALE = "MALE";
     public static final String EMAIL = "EMAIL";
@@ -38,4 +39,7 @@ public class Constant {
 
     public static final String MAP_UNNAMED_ROAD = "Unnamed Road";
     public static final String DEFAULT_REGION = "b198b90f-6c56-4356-ac14-a76eb6d3e53f";
+
+    public static final String CHAT_ROOMS = "chat_rooms";
+    public static final String USERS_COLLECTION = "users";
 }

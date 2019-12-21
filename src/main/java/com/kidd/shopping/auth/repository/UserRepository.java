@@ -12,5 +12,8 @@ public interface UserRepository extends JpaRepository<User,String> {
     boolean isAccountActivated(String username, String role);
 
     User findByUsername(String username);
+    User findFirstByRole(String role);
+
+
 
 }
